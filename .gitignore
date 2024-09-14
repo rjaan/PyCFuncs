@@ -1,0 +1,17 @@
+# general things to ignore
+build/
+dist/
+*.egg-info/
+*.egg
+*.py[cod]
+__pycache__/*
+*.so
+*~
+.*.swp
+*.*.backup
+# general things to ignore for kivytwisted module and 
+# some parts of it.
+
+# due to using tox and pytest
+.tox
+.cache

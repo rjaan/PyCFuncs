@@ -4,6 +4,8 @@ Define the C-variables and functions from the C-files that are needed in Python
 import sys, random,string 
 from ctypes import c_int, CDLL, create_string_buffer
 
+__all__ = [ 'CStrToIntException', 'CStrToInt', 'c_int' ]
+
 class CStrToIntException(Exception):
     pass
 
@@ -38,4 +40,4 @@ if __name__ == '__main__' :
           integers.append( strtoint(s,c_int) )     
       print( cintegers  , '=>', integers  )
    except CStrToIntException as e:
-          print ( e.message ) 
+          print ( e ) 
