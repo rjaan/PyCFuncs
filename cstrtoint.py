@@ -16,10 +16,10 @@ class CStrToInt(CDLL):
       """
       def __init__(self, prefix, cfuncname ) :
           try: 
-              basic_function_lib = CDLL(
-                                        '%s_%s.so' % (prefix,sys.platform)
-                                       )
-              self.cfunc = eval( f'basic_function_lib.{cfuncname}')
+              super(CStrToInt,self).__init__ (
+                                 '%s_%s.so' % (prefix,sys.platform)
+                               )
+              self.cfunc = eval( f'self.{cfuncname}')
           except:
               raise CStrToIntException('OS %s or %s not recognized' % (sys.platform, cfuncname))
         
